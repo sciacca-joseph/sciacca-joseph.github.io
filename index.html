@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joseph Sciacca — Senior Enterprise Applications Manager. 20+ years of enterprise IT leadership across SAP, geospatial, and cloud transformation programs.">
+  <title>Joseph Sciacca — Senior Enterprise Applications Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1a1a1a;
+      --text-secondary: #5a5a5a;
+      --text-tertiary: #8a8a8a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f3;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.15);
+      --accent: #1d6fa5;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.5rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-primary);
+      border-radius: 12px;
+      border: 0.5px solid var(--border);
+      padding: 3rem;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+    }
+
+    .header-text { flex: 1; min-width: 0; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+    }
+
+    .title {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 13px;
+      align-items: center;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .contact-row a:hover { opacity: 0.7; }
+
+    .contact-row .neutral { color: var(--text-secondary); }
+    .contact-row .sep { color: var(--border-strong); }
+
+    /* Summary */
+    .summary {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Job entries */
+    .job {
+      margin-bottom: 2rem;
+    }
+
+    .job + .job {
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .job-dates {
+      font-size: 13px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .job-summary {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .project {
+      margin-top: 16px;
+    }
+
+    .project + .project {
+      margin-top: 18px;
+    }
+
+    .project-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      padding-left: 18px;
+    }
+
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 2.5rem;
+    }
+
+    .skill-group { }
+
+    .skill-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .skill-content {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+
+    /* Education */
+    .education-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-degree {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* Section spacing */
+    section { margin-bottom: 2.5rem; }
+    section:last-child { margin-bottom: 0; }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.5rem 3rem; }
+      .container { padding: 2rem 1.5rem; border-radius: 8px; }
+      .header { gap: 1.25rem; flex-direction: column; align-items: flex-start; }
+      .avatar { width: 64px; height: 64px; font-size: 18px; }
+      h1 { font-size: 24px; }
+      .stats { grid-template-columns: 1fr; gap: 8px; }
+      .job-header { flex-direction: column; gap: 2px; }
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; padding: 0; }
+      .container { border: none; padding: 0; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <header class="header">
+      <div class="avatar">JS</div>
+      <div class="header-text">
+        <h1>Joseph Sciacca</h1>
+        <p class="title">Senior Enterprise Applications Manager</p>
+        <div class="contact-row">
+          <a href="mailto:joseph@sciacca.me">joseph@sciacca.me</a>
+          <span class="sep">·</span>
+          <a href="tel:6172839042" class="neutral">617-283-9042</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <span class="neutral">Portland, OR</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="summary">An enterprise IT leader with 20+ years of experience bridging deep technical expertise and hands-on team leadership. I manage large, cross-functional teams—blending internal staff and external partners—to deliver enterprise-scale solutions across the full back-office technology landscape: work and asset management, finance, supply chain, HR, and beyond. Equally comfortable defining architecture strategy and rolling up my sleeves to solve complex problems, I focus on connecting business needs to technology execution in ways that drive measurable outcomes.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">20+</div>
+        <div class="stat-label">Years in enterprise IT</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">10</div>
+        <div class="stat-label">Years in leadership</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">MS</div>
+        <div class="stat-label">Information Systems</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Senior Enterprise Applications Manager</h3>
+          <span class="job-dates">2023 – Present</span>
+        </div>
+        <p class="job-company">NW Natural · Portland, OR</p>
+        <p class="job-summary">Promoted following successful delivery of the enterprise SAP S/4HANA transformation program. Lead a team of 12 direct staff augmented by 20+ external contractors, collectively responsible for the full back-office application portfolio at NW Natural, with an annual capital project budget averaging $5–10M. Ensure SOX compliance, enforce technical best practices across the application SDLC, and drive strategic technology decisions across this broad landscape.</p>
+
+        <div class="project">
+          <p class="project-title">SAP S/4HANA Cloud Transformation</p>
+          <ul>
+            <li>Led the full-lifecycle migration from on-premise SAP ECC to a private cloud-hosted S/4HANA environment, serving as Solution Architect and directing internal staff and external implementation partners across the program.</li>
+            <li>Drove adoption of complementary cloud platforms including CPI/BTP, SuccessFactors, Ariba, Fieldglass, and SAC, delivering an integrated modern landscape across finance, supply chain, HR, and asset management domains.</li>
+            <li>Replaced legacy work management solution with IFS Clevest, transitioning 400+ field users from ruggedized laptops to iPads and redesigning all field execution processes around a true mobile-first user experience.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <p class="project-title">ESRI Utility Network Transformation</p>
+          <ul>
+            <li>Architected the transformation of an on-premise ESRI Geometric Network to a private cloud-hosted (Azure) ESRI Utility Network, including full re-modeling of legacy data into the UPDM and refactoring of all inbound and outbound integrations.</li>
+            <li>Delivered a modern geospatial platform supporting NW Natural's gas distribution network, enabling more accurate asset modeling and improved operational efficiency across field and back-office workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Enterprise Applications Manager</h3>
+          <span class="job-dates">2015 – 2023</span>
+        </div>
+        <p class="job-company">NW Natural · Portland, OR</p>
+        <p class="job-summary">Managed development and support of the back-office application portfolio at NW Natural, overseeing the full SAP ecosystem as well as geospatial, operational, and financial applications. SAP portfolio included ECC 6.0 (FI/CO, SCM, IM, RE/FX, EAM, PS, HCM), GRC, Solution Manager, and Fiori/Gateway. Served as Solution Architect for the enterprise-wide S/4HANA transformation program, directing both internal staff and external implementation partners through migration to a private cloud-hosted SAP S/4HANA deployment.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">SAP Development Team Lead</h3>
+          <span class="job-dates">2010 – 2015</span>
+        </div>
+        <p class="job-company">Instrumentation Laboratory (Werfen) · Bedford, MA</p>
+        <p class="job-summary">Led a development team with primary support responsibilities to FI, CO, QM, MM modules, with additional expertise in SD and PP. A hybrid role spanning business analysis, project management, and functional leadership.</p>
+
+        <div class="project">
+          <p class="project-title">Site Support — Bolton Medical, Sunrise, FL</p>
+          <ul>
+            <li>Assumed full ownership of all SAP domains for Bolton Medical, a sister company and manufacturer of aortic and thoracic treatment devices—serving simultaneously as technical lead, business analyst, and project manager across the entire application landscape.</li>
+            <li>Developed end-to-end exposure across all business functions—finance, supply chain, quality, manufacturing, and distribution—by owning strategic SAP planning and process alignment for the full Werfen group integration.</li>
+            <li>Developed UDI-based finished product labeling solution via Adobe Forms and GS1 compliant barcoding.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Senior Programmer / Analyst</h3>
+          <span class="job-dates">2004 – 2010</span>
+        </div>
+        <p class="job-company">Instrumentation Laboratory · Bedford, MA</p>
+        <p class="job-summary">Independent ABAP developer responsible for supporting QA, MM, and IM modules. Acted as integration specialist developing and implementing external applications and supplementary interfaces integrating external systems with the core SAP environment.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills &amp; Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-label">SAP</div>
+          <div class="skill-content">S/4HANA · ECC 6.0 (FI/CO, MM, SCM, EAM, HCM, RE/FX, PS) · BTP · CPI · SuccessFactors · Ariba · Fieldglass · SAC · GRC · Solution Manager · Fiori</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Geospatial</div>
+          <div class="skill-content">ESRI ArcGIS · Utility Network (UN) · Geometric Network (GN) · UPDM · ArcGIS Enterprise</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Cloud &amp; Infrastructure</div>
+          <div class="skill-content">Microsoft Azure · SAP Private Cloud · SaaS/PaaS integration patterns · IFS Clevest</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Enterprise Architecture</div>
+          <div class="skill-content">Solution architecture · Back-office portfolio management · Systems integration · SDLC governance · Vendor management</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Leadership &amp; Delivery</div>
+          <div class="skill-content">Team leadership (12 FTE + 20+ contractors) · Agile/Scrum · Program management · Cross-functional stakeholder engagement</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Regulatory &amp; Compliance</div>
+          <div class="skill-content">SOX · GAAP · FERC · FDA/Vigilance reporting</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="edu-degree">MS, Information Systems</div>
+        <div class="edu-school">Northeastern University, College of Engineering · Boston, MA</div>
+      </div>
+      <div class="education-item">
+        <div class="edu-degree">BS, Environmental Geology</div>
+        <div class="edu-school">Northeastern University · Boston, MA</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
